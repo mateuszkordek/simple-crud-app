@@ -1,0 +1,26 @@
+@layer primevue, custom;
+
+:root {
+    --font-family: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-family), serif;
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    background-color: #f1f5f9
+}
+
+h1 {
+    font-weight: normal;
+    color: var(--p-surface-700)
+}
+
+div.p-paginator {
+    @media(min-width: 1024px){
+        justify-content: start;
+    }
+}

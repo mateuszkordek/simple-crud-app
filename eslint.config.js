@@ -42,4 +42,27 @@ export default [
             },
         },
     },
+    {
+        plugins: {
+            pluginVue,
+        },
+        languageOptions: {
+            globals: {
+                ref: 'readonly',
+                reactive: 'readonly',
+                computed: 'readonly',
+                watch: 'readonly',
+                onMounted: 'readonly',
+                onUnmounted: 'readonly',
+                defineProps: 'readonly',
+                defineEmits: 'readonly',
+                defineExpose: 'readonly',
+                useRouter: 'readonly',
+                useRoute: 'readonly',
+            },
+        },
+        rules: {
+            'no-undef': 'off', // Możesz też wyłączyć regułę dla większej pewności
+        },
+    },
 ]

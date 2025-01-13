@@ -1,31 +1,26 @@
 <script setup lang="ts">
-const THEME_MODE_LOCAL_STORAGE_KEY = 'themeMode'
+import { useUserStore } from '@stores/user'
 
-const initThemeMode = () => {
-    const prevThemeMode =
-        localStorage.getItem(THEME_MODE_LOCAL_STORAGE_KEY) || 'dark'
-    if (prevThemeMode === 'dark') {
-        document.documentElement.classList.add('app--dark')
-    }
-}
+const userStore = useUserStore()
 
-initThemeMode()
-
-const toggleDarkMode = () => {
-    if (document.documentElement.classList.contains('app--dark')) {
-        document.documentElement.classList.remove('app--dark')
-        localStorage.setItem(THEME_MODE_LOCAL_STORAGE_KEY, 'light')
-    } else {
-        document.documentElement.classList.add('app--dark')
-        localStorage.setItem(THEME_MODE_LOCAL_STORAGE_KEY, 'dark')
-    }
-}
+onMounted(async () => {
+    if (!userStore.isInitialized) await userStore.fetchUsers()
+})
 </script>
 
-<!--todo i18n-->
 <template>
-    <div>
-        <Button label="Toggle Dark Mode" @click="toggleDarkMode" />
+    <div
+        class="min-h-[100vh] max-w-full px-2 sm:px-4 py-8 sm:max-w-[640px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1280px] mx-auto"
+    >
+        <Dialog v-model:visible="userStore.isLoading" modal :closable="false">
+            <template #header>
+                <i
+                    class="pi pi-spin pi-spinner mx-auto"
+                    style="font-size: 1.5rem"
+                />
+            </template>
+            <div>Please wait...</div>
+        </Dialog>
+        <RouterView />
     </div>
-    <RouterView></RouterView>
 </template>

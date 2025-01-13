@@ -7,8 +7,32 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Avatar: typeof import('primevue/avatar')['default']
     Button: typeof import('primevue/button')['default']
+    Column: typeof import('primevue/column')['default']
+    DataTable: typeof import('primevue/datatable')['default']
+    DeleteUserModal: typeof import('./src/components/DeleteUserModal.vue')['default']
+    Dialog: typeof import('primevue/dialog')['default']
+    Fieldset: typeof import('primevue/fieldset')['default']
+    FileUpload: typeof import('primevue/fileupload')['default']
+    FloatLabel: typeof import('primevue/floatlabel')['default']
+    Form: typeof import('@primevue/forms/form')['default']
+    IconField: typeof import('primevue/iconfield')['default']
+    Image: typeof import('primevue/image')['default']
+    InputIcon: typeof import('primevue/inputicon')['default']
+    InputText: typeof import('primevue/inputtext')['default']
+    Message: typeof import('primevue/message')['default']
+    Paginator: typeof import('primevue/paginator')['default']
+    Panel: typeof import('primevue/panel')['default']
+    RadioButton: typeof import('primevue/radiobutton')['default']
+    RadioButtonGroup: typeof import('primevue/radiobuttongroup')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Toast: typeof import('primevue/toast')['default']
+    UserDeleteModal: typeof import('./src/components/UserDeleteModal.vue')['default']
+    UserDetails: typeof import('./src/components/UserDetails.vue')['default']
+    UserDetailsForm: typeof import('./src/components/UserDetailsForm.vue')['default']
+    UserForm: typeof import('./src/components/UserForm.vue')['default']
+    UserTable: typeof import('./src/components/UserTable.vue')['default']
   }
 }
