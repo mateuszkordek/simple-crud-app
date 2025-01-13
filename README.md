@@ -1,4 +1,4 @@
-# Simple Vue CRUD Application
+# Simple CRUD Application
 
 This is a simple CRUD application built with Vue 3 and TypeScript.
 

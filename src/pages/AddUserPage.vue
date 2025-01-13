@@ -3,6 +3,7 @@ import UserForm from '@components/UserForm.vue'
 import { FormUser } from '@types-interfaces/userForm.ts'
 import { useUserStore } from '@stores/user.ts'
 import { useRouter } from 'vue-router'
+import { PREVIOUS_ACTION } from '@types-interfaces/router.ts'
 
 const router = useRouter()
 
@@ -12,7 +13,7 @@ const onSubmit = async (user: FormUser) => {
     await addNewUser(user)
     await router.push({
         name: 'user-list',
-        query: { prevAction: 'user-added' },
+        query: { prevAction: PREVIOUS_ACTION.USER_ADDED },
     })
 }
 

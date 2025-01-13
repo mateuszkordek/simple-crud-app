@@ -9,6 +9,7 @@ import {
     USER_DELETED_TOAST,
     USER_UPDATED_TOAST,
 } from '@types-interfaces/toasts.ts'
+import { PREVIOUS_ACTION } from '@types-interfaces/router.ts'
 
 const userStore = useUserStore()
 
@@ -26,11 +27,11 @@ const resetRouteQuery = () => {
 onMounted(() => {
     const { prevAction } = route.query
 
-    if (prevAction === 'user-added') {
+    if (prevAction === PREVIOUS_ACTION.USER_ADDED) {
         toast.add(USER_ADDED_TOAST)
-    } else if (prevAction === 'user-updated') {
+    } else if (prevAction === PREVIOUS_ACTION.USER_UPDATED) {
         toast.add(USER_UPDATED_TOAST)
-    } else if (prevAction === 'user-deleted') {
+    } else if (prevAction === PREVIOUS_ACTION.USER_DELETED) {
         toast.add(USER_DELETED_TOAST)
     }
 

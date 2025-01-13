@@ -40,4 +40,10 @@ export default defineConfig({
             '@api': fileURLToPath(new URL('./src/api', import.meta.url)),
         },
     },
+    test: {
+        globals: true,
+        environment: 'jsdom',
+        include: ['**/*.{spec,integration,test}.ts'],
+        setupFiles: ['vitest.setup.ts'],
+    },
 })

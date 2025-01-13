@@ -4,6 +4,7 @@ import { FormUser } from '@types-interfaces/userForm.ts'
 import { useUserStore } from '@stores/user.ts'
 import { useRouter } from 'vue-router'
 import UserDeleteModal from '@components/DeleteUserModal.vue'
+import { PREVIOUS_ACTION } from '@types-interfaces/router.ts'
 
 const router = useRouter()
 
@@ -19,7 +20,7 @@ const onSubmit = async (user: FormUser) => {
     await userStore.updateUserById(userIdAsNumber.value, user)
     await router.push({
         name: 'user-list',
-        query: { prevAction: 'user-updated' },
+        query: { prevAction: PREVIOUS_ACTION.USER_UPDATED },
     })
 }
 
@@ -52,7 +53,7 @@ const onDeleteUser = async () => {
     deleteDialog.value = false
     await router.push({
         name: 'user-list',
-        query: { prevAction: 'user-deleted' },
+        query: { prevAction: PREVIOUS_ACTION.USER_DELETED },
     })
 }
 
