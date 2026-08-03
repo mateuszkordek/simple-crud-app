@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Claude
+.claude/settings.local.json
+.worktrees/
+docs
+!design-system/docs/
+.superpowersdocs/
+.superpowers

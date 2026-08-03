@@ -23,6 +23,17 @@ Make sure you have Node.js and npm installed on your machine.
     npm install
     ```
 
+### API key
+
+The app talks to [reqres.in](https://reqres.in), which requires an `x-api-key`
+header. The public free-plan key is used by default, so no setup is needed. To
+use your own key ([generate one here](https://app.reqres.in/?next=/api-keys)),
+create a `.env.local` file:
+
+```sh
+VITE_REQRES_API_KEY=your-key-here
+```
+
 ### Running the Application
 
 Start the development server:
